@@ -14,7 +14,7 @@ public class LSUIManager : MonoBehaviour
 
     public GameObject levelInfoPanel;
 
-    public Text LevelName;
+    public Text levelName, gemsFound, gemsTarget, bestTime, timeTarget; 
 
     // Start is called before the first frame update
     void Awake()
@@ -62,7 +62,21 @@ public class LSUIManager : MonoBehaviour
 
     public void ShowInfo(MapPoint levelInfo)
     {
-        LevelName.text = levelInfo.levelName;
+        levelName.text = levelInfo.levelName;
+
+        gemsFound.text = "FOUND: " + levelInfo.gemsCollected;
+        gemsTarget.text = "IN LEVEL: " + levelInfo.totalGems;
+
+        timeTarget.text = "TARGET: " + levelInfo.targetTime + "s";
+
+        if(levelInfo.bestTime == 0)
+        {
+            bestTime.text = "BEST ---";
+        }
+        else
+        {
+            bestTime.text = "BEST " + levelInfo.bestTime.ToString("F2") + "s";
+        }
 
         levelInfoPanel.SetActive(true);
     }
