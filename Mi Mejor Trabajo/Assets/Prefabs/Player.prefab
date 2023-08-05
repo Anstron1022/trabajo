@@ -166,11 +166,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 7.5
   jumpForce: 5
+  bounceForce: 0
   theRB: {fileID: 6846137659381804262}
+  anim: {fileID: 0}
   groundCheckpoint: {fileID: 4941332230399256428}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1536
+  KnockBackLength: 0
+  KnockBackForce: 0
+  stopInput: 0
 --- !u!95 &1471778649043146838
 Animator:
   serializedVersion: 5
@@ -206,6 +211,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   maxHealth: 0
+  invincibleLength: 0
+  deffectEffect: {fileID: 0}
 --- !u!1 &7888007525793593526
 GameObject:
   m_ObjectHideFlags: 0
